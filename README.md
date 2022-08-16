@@ -6,6 +6,8 @@ My personal portfolio, where I'm going to display my works as a fullstatck-devel
 
 ### Backend
 
+    python -m venv env
+    source env/bin/activate
     pip install -r requirements.txt
 
     ./manage.py makemigrations
