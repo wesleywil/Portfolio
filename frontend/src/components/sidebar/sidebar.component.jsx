@@ -17,12 +17,12 @@ const SideBar = () => {
       </div>
       <SideBarLink Icon={<FaHome />} text={"Home"} toPage={"/"} />
       <SideBarLink Icon={<FaSmileBeam />} text={"About"} toPage={"/about"} />
+      <SideBarLink Icon={<FaBrain />} text={"Skills"} toPage={"/skills"} />
       <SideBarLink
         Icon={<FaLaptopCode />}
         text={"Projects"}
         toPage={"/projects"}
       />
-      <SideBarLink Icon={<FaBrain />} text={"Skills"} toPage={"/skills"} />
 
       <div className="bg-red-400 p-2 mt-32">
         <a
