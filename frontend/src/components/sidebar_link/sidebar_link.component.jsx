@@ -1,9 +1,14 @@
-const SideBarLink = ({ Icon, text }) => {
+import { NavLink } from "react-router-dom";
+
+const SideBarLink = ({ Icon, text, toPage }) => {
   return (
-    <div className="text-slate-700 mx-auto flex flex-col justify-center text-center mt-12 text-3xl">
+    <NavLink
+      to={toPage}
+      className="text-slate-700 hover:text-slate-900 mx-auto flex flex-col justify-center text-center mt-12 text-3xl"
+    >
       <h1 className="p-0 m-0 mx-auto">{Icon}</h1>
       <h1>{text}</h1>
-    </div>
+    </NavLink>
   );
 };
 export default SideBarLink;
