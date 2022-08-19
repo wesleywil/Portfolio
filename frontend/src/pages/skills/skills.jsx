@@ -4,7 +4,9 @@ const Skills = () => {
   return (
     <div className="text-center pt-52 mx-auto flex  gap-2">
       <div className="pl-10 w-1/2">
-        <h1 className="text-7xl mb-5 mt-1 text-red-400 text-left">Skills</h1>
+        <h1 className="text-7xl mb-5 mt-1 text-white text-left">
+          <span className="text-red-400 font-bold">S</span>kills
+        </h1>
         <p className="mb-2 text-white text-xl text-left">
           I create amazing web apps that are fast and easy to use. The main
           technologies used in my apps are Html, CSS, Javascript to Front-end
