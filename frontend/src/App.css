@@ -1,0 +1,19 @@
+html {
+  background-size: cover;
+  display: block;
+  position: relative;
+}
+
+html::before {
+  background-image: url("./assets/background.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  content: "";
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}

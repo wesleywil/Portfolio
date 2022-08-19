@@ -1,7 +1,7 @@
 const SkillBar = ({ text, progress }) => {
   return (
     <div>
-      <h1 className="text-left">{text}</h1>
+      <h1 className="text-left text-white">{text}</h1>
       <div className="text-left">
         <progress
           className="progress progress-error "

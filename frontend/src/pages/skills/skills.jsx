@@ -1,4 +1,5 @@
 import SkillBar from "../../components/skill_bar/skill_bar.component";
+import ContactTip from "../../components/contact_tip/contact_tip.component";
 
 const Skills = () => {
   return (
@@ -18,9 +19,7 @@ const Skills = () => {
           as the backend language and reactjs at the Front-end.
         </p>
         <div className="text-left">
-          <button className="text-red-400 hover:text-red-300 underline text-xl">
-            Contact me
-          </button>
+          <ContactTip />
         </div>
       </div>
       <div className="w-1/2 p-2">
