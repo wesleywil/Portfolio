@@ -8,6 +8,7 @@ html::before {
   background-image: url("./assets/background.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: repeat-x;
   opacity: 0.1;
   content: "";
   top: 0;
@@ -16,4 +17,10 @@ html::before {
   right: 0;
   position: absolute;
   z-index: -1;
+}
+
+@media only screen and (min-height: 1081px) and (max-height: 1500px) {
+  body {
+    height: 1500px;
+  }
 }

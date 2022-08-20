@@ -4,14 +4,18 @@ import {
   FaSmileBeam,
   FaGithub,
   FaBrain,
+  FaArrowUp,
 } from "react-icons/fa";
 
 import SideBarLink from "../sidebar_link/sidebar_link.component";
 
 const SideBar = () => {
   return (
-    <div className="w-64 h-screen bg-slate-200 float-left flex flex-col">
-      <div className="m-10 mx-auto text-red-400 font-bold">
+    <div
+      className="xl:w-64  xl:h-screen xl:bg-slate-200 float-left flex flex-col"
+      id="sidebar"
+    >
+      <div className="hidden xl:block m-10 mx-auto text-red-400 font-bold">
         <h1 className="text-6xl ">WW</h1>
         <h1 className="text-center">fullstack</h1>
       </div>
@@ -24,11 +28,11 @@ const SideBar = () => {
         toPage={"/projects"}
       />
 
-      <div className="bg-red-400 p-2 mt-32">
+      <div className="xl:bg-red-400 p-2 xl:mt-32 mt-10">
         <a
           href="https://github.com/wesleywil"
           target="_blank"
-          className="text-slate-800 hover:text-slate-200 font-bold mx-auto flex flex-col justify-center text-center  text-2xl transition duration-700 ease-in-out"
+          className="xl:text-slate-800 text-red-400 hover:text-slate-200 font-bold mx-auto flex flex-col justify-center text-center  xl:text-2xl text-base transition duration-700 ease-in-out"
         >
           <h1 className="p-0 m-0 mx-auto">
             <FaGithub />
@@ -36,7 +40,15 @@ const SideBar = () => {
           <h1>GitHub</h1>
         </a>
       </div>
-      <div className="text-center text-slate-500 font-semibold mt-20">
+      <div className="block xl:hidden lg:hidden md:hidden flex justify-center fixed z-10 left-5 bottom-2">
+        <a
+          href="#sidebar"
+          className="text-red-400 bg-slate-900 rounded-full p-2"
+        >
+          <FaArrowUp />
+        </a>
+      </div>
+      <div className="text-center hidden xl:block text-slate-500 font-semibold mt-20">
         <h1>by</h1>
         <h1>wesley wilson</h1>
       </div>
