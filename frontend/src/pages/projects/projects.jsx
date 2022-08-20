@@ -10,7 +10,7 @@ const Projects = () => {
         <h2 className="text-2xl mb-5 mt-2  text-white text-left">
           <span className="text-red-400 font-bold">P</span>ersonal
         </h2>
-        <div className="m-2 border-2 rounded-xl flex flex-wrap gap-2 justify-center p-4">
+        <div className="m-2 rounded-xl flex flex-wrap gap-2 justify-center p-4">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
@@ -22,7 +22,7 @@ const Projects = () => {
         <h2 className="text-2xl mb-5 mt-2  text-white text-left">
           <span className="text-red-400 font-bold">O</span>thers
         </h2>
-        <div className="m-2 border-2 rounded-xl flex flex-wrap gap-2 justify-center p-4">
+        <div className="m-2 rounded-xl flex flex-wrap gap-2 justify-center p-4">
           <ProjectCard />
           <ProjectCard />
           <ProjectCard />
