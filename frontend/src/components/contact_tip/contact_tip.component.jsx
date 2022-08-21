@@ -4,9 +4,12 @@ const ContactTip = () => {
       class="tooltip tooltip-error tooltip-right font-semibold"
       data-tip="wesleywilsonti@gmail.com"
     >
-      <button className="text-red-400 hover:text-red-300 underline text-xl">
+      <a
+        href="mailto: wesleywilsonti@gmail.com"
+        className="text-red-400 hover:text-red-300 underline text-xl"
+      >
         Contact me
-      </button>
+      </a>
     </div>
   );
 };

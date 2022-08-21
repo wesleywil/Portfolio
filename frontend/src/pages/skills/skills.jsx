@@ -3,26 +3,29 @@ import ContactTip from "../../components/contact_tip/contact_tip.component";
 
 const Skills = () => {
   return (
-    <div className="text-center pt-52 mx-auto flex  gap-2">
-      <div className="pl-10 w-1/2">
-        <h1 className="text-7xl mb-5 mt-1 text-white text-left">
+    <div className="text-center pt-10 xl:pt-52 mx-auto flex flex-col xl:flex-row gap-2 justify-center">
+      <h1 className="block xl:hidden md:hidden text-7xl mb-5 mt-1 text-white text-center">
+        <span className="text-red-400 font-bold">S</span>kills
+      </h1>
+      <div className="hidden xl:block md:block pl-10 w-1/2 md:w-full md:p-2">
+        <h1 className="text-7xl mb-5 mt-1 text-white text-left md:text-center">
           <span className="text-red-400 font-bold">S</span>kills
         </h1>
-        <p className="mb-2 text-white text-xl text-left">
+        <p className="mb-2 text-white text-xl text-left md:text-center">
           I create amazing web apps that are fast and easy to use. The main
           technologies used in my apps are Html, CSS, Javascript to Front-end
           and manly Python to Back-end.
         </p>
-        <p className="mb-2 text-white text-xl text-left">
+        <p className="mb-2 text-white text-xl text-left md:text-center">
           I like to experience with other tech as well, that's why I'm using
           nowadays Tauri an amazing framework to create desktop apps using rust
           as the backend language and reactjs at the Front-end.
         </p>
-        <div className="text-left">
+        <div className="text-left md:text-center">
           <ContactTip />
         </div>
       </div>
-      <div className="w-1/2 p-2">
+      <div className="xl:w-1/2 p-2">
         <div className="border-2 border-slate-400 p-2 rounded-xl">
           <SkillBar text={"Front-end"} progress={60} />
           <SkillBar text={"Back-end"} progress={55} />

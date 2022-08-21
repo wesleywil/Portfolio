@@ -32,7 +32,7 @@ const SideBar = () => {
         <a
           href="https://github.com/wesleywil"
           target="_blank"
-          className="xl:text-slate-800 text-red-400 hover:text-slate-200 font-bold mx-auto flex flex-col justify-center text-center  xl:text-2xl text-base transition duration-700 ease-in-out"
+          className="xl:text-slate-800 text-red-400 hover:text-slate-200 font-bold mx-auto flex flex-col justify-center text-center  xl:text-2xl md:text-2xl text-base transition duration-700 ease-in-out"
         >
           <h1 className="p-0 m-0 mx-auto">
             <FaGithub />
