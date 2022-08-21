@@ -9,15 +9,23 @@ import {
 
 import SideBarLink from "../sidebar_link/sidebar_link.component";
 
+import WWlogo from "../../assets/wwlogo.svg";
+
 const SideBar = () => {
   return (
     <div
       className="xl:w-64  xl:h-screen xl:bg-slate-200 float-left flex flex-col"
       id="sidebar"
     >
-      <div className="hidden xl:block m-10 mx-auto text-red-400 font-bold">
-        <h1 className="text-6xl ">WW</h1>
-        <h1 className="text-center">fullstack</h1>
+      <div className="hidden xl:block md:block m-5 mx-auto text-red-400 font-bold">
+        <img
+          src={WWlogo}
+          className="w-12 xl:w-20 mx-auto"
+          alt="wesley wilson logo"
+        />
+        <h1 className="text-center text-xl xl:text-2xl  font-bold">
+          fullstack
+        </h1>
       </div>
       <SideBarLink Icon={<FaHome />} text={"Home"} toPage={"/"} />
       <SideBarLink Icon={<FaSmileBeam />} text={"About"} toPage={"/about"} />

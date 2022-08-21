@@ -1,6 +1,7 @@
 import ContactTip from "../../components/contact_tip/contact_tip.component";
 
 import Image from "../../assets/dev_image.svg";
+import LogoImage from "../../assets/wwlogo.svg";
 
 const About = () => {
   return (
@@ -37,6 +38,9 @@ const About = () => {
         <div className="hidden xl:block text-center xl:text-left p-2">
           <ContactTip />
         </div>
+      </div>
+      <div className="xl:hidden md:hidden w-20 mx-auto m-2 py-3 px-4 rounded-full border-2">
+        <img src={LogoImage} alt="" />
       </div>
       <div className="hidden xl:block md:block w-1/2 md:w-2/3 md:mx-auto p-2">
         <img src={Image} alt="development image" />
