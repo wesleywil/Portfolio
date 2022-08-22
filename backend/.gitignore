@@ -131,3 +131,16 @@ project/migrations
 
 # Steps File
 project_steps.txt
+
+#Images
+
+#Ignore all images inside projects except for default.png
+!static/
+static/*
+!static/images/
+static/images/*
+!static/images/projects/
+static/images/projects/*
+!static/images/projects/default/
+static/images/projects/default/*
+!static/images/projects/default/default.png
