@@ -3,7 +3,7 @@ from PIL import Image
 
 class Project(models.Model):
     title = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='projects/' ,default="default/default.png")
+    image = models.ImageField(upload_to='projects/' ,default="projects/default/default.png")
     description = models.TextField()
     link = models.CharField(max_length=200)
     tags = models.ManyToManyField("Tag", blank=True)
