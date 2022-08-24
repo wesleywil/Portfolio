@@ -39,10 +39,10 @@ export const projectsSlice = createSlice({
 export const allProjects = (state) => state.projects.projects;
 
 export const personalProjects = (state) =>
-  state.projects.projects.find((project) => project.personal === true);
+  state.projects.projects.filter((project) => project.personal === true);
 
 export const notPersonalProjects = (state) =>
-  state.projects.projects.find((project) => project.personal === false);
+  state.projects.projects.filter((project) => project.personal === false);
 
 export const projectById = (state, projectId) =>
   state.projects.projects.find((project) => project.id === projectId);

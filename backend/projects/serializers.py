@@ -11,4 +11,4 @@ class ProjectSerializer(serializers.ModelSerializer):
     tags = TagSerializer(read_only=True, many=True)
     class Meta:
         model = Project
-        fields = ('id', 'title', 'description', 'link', 'tags')
+        fields = ('id', 'title', 'image', 'description', 'link', 'tags', 'personal')
