@@ -1,7 +1,7 @@
 const ContactTip = () => {
   return (
     <div
-      class="tooltip tooltip-error tooltip-right font-semibold"
+      className="tooltip tooltip-error tooltip-right font-semibold"
       data-tip="wesleywilsonti@gmail.com"
     >
       <a
