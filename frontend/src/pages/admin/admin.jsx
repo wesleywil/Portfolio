@@ -1,9 +1,14 @@
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 import AdminCardInfo from "../../components/admin_card_info/admin_card_info.component";
 import AdminStatusMessage from "../../components/admin_status_message/admin_status_message.component";
+
+import { getToken } from "../../redux/account/accountSlice";
+
 const Admin = () => {
   const history = useNavigate();
+  const token = useSelector(getToken);
 
   return (
     <div className="text-center xl:pt-52 pt-10 mx-auto bg-black/50 h-screen">
@@ -12,12 +17,21 @@ const Admin = () => {
         <AdminCardInfo />
         <div className="flex flex-col justify-between">
           <AdminStatusMessage />
-          <button
-            onClick={() => history("../login", { replace: true })}
-            className="bg-red-400 hover:bg-red-500 text-slate-200 hover:text-slate-100 mb-6 text-xl p-2 w-1/2 mx-auto rounded-full transition duration-700 ease-in-out"
-          >
-            Login
-          </button>
+          {token ? (
+            <button
+              onClick={() => localStorage.removeItem("token")}
+              className="bg-red-400 hover:bg-red-500 text-slate-200 hover:text-slate-100 mb-6 text-xl p-2 w-1/2 mx-auto rounded-full transition duration-700 ease-in-out"
+            >
+              Logout
+            </button>
+          ) : (
+            <button
+              onClick={() => history("../login", { replace: true })}
+              className="bg-red-400 hover:bg-red-500 text-slate-200 hover:text-slate-100 mb-6 text-xl p-2 w-1/2 mx-auto rounded-full transition duration-700 ease-in-out"
+            >
+              Login
+            </button>
+          )}
         </div>
         <AdminCardInfo />
       </div>

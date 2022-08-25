@@ -4,7 +4,7 @@ import AdminListInfo from "../admin_list_info/admin_list_info.component";
 
 const AdminCardInfo = () => {
   return (
-    <div className="m-2 overflow-hidden border-2 border-slate-200 rounded-xl">
+    <div className="m-2 overflow-hidden border-2 border-slate-200 rounded-xl xl:w-1/3">
       <div className="flex flex-col ">
         <div className="bg-slate-700/50 p-2">
           <div className="flex justify-between gap-3 ">
