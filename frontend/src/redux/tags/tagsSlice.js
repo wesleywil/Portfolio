@@ -24,7 +24,7 @@ export const tagsSlice = createSlice({
       })
       .addCase(fetchTags.fulfilled, (state, action) => {
         state.status = "succeeded!";
-        state.projects = action.payload;
+        state.tags = action.payload;
       })
       .addCase(fetchTags.rejected, (state, action) => {
         state.status = "failed";
