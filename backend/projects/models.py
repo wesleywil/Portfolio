@@ -12,7 +12,7 @@ class Project(models.Model):
     def __str__(self):
         return self.title
     
-    def save(self):
+    def save(self, *args, **kwargs):
         super().save()
         img = Image.open(self.image.path)
 
