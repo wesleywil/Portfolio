@@ -12,3 +12,9 @@ class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ('id', 'title', 'image', 'description', 'link', 'tags', 'personal')
+
+class ProjectNoImageSerializer(serializers.ModelSerializer):
+    tags = serializers.PrimaryKeyRelatedField(many=True, queryset = Tag.objects.all())
+    class Meta:
+        model = Project
+        fields = ('id', 'title', 'description', 'link', 'tags', 'personal')

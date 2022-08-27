@@ -36,13 +36,13 @@ const Admin = () => {
           <div className="flex justify-between gap-2 mb-40 mt-2">
             <button
               onClick={() => dispatch(create(true))}
-              className="bg-red-400  hover:bg-red-500 py-2 text-white font-bold text-3xl px-1 rounded-full"
+              className="bg-red-400  hover:bg-red-500 p-2 text-white font-bold text-3xl  rounded-full"
             >
               <FaPlus />
             </button>
             <button
               onClick={() => dispatch(create(false))}
-              className="bg-blue-400 hover:bg-blue-500 py-2 text-white font-bold text-3xl px-1 rounded-full"
+              className="bg-blue-400 hover:bg-blue-500 p-2 text-white font-bold text-3xl rounded-full"
             >
               <FaPlus />
             </button>

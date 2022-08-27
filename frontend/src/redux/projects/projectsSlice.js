@@ -16,6 +16,36 @@ export const fetchProjects = createAsyncThunk(
   }
 );
 
+export const createProject = createAsyncThunk(
+  "projects/createProject",
+  async (data) => {
+    console.log("DATA IS ", data);
+    const res = await axios.post(
+      `http://localhost:8000/api/projects/projects/`,
+      data,
+      {
+        headers: { Authorization: `token ${localStorage.getItem("token")}` },
+      }
+    );
+    console.log("AXIOS RES=> ", res);
+    return res.data;
+  }
+);
+
+export const updateProject = createAsyncThunk(
+  "projects/updateProject",
+  async (data) => {
+    const res = await axios.put(
+      `http://localhost:8000/api/projects/projects/${data.id}/`,
+      data,
+      {
+        headers: { Authorization: `token ${localStorage.getItem("token")}` },
+      }
+    );
+    return res.data;
+  }
+);
+
 export const projectsSlice = createSlice({
   name: "projects",
   initialState,
@@ -31,6 +61,26 @@ export const projectsSlice = createSlice({
       })
       .addCase(fetchProjects.rejected, (state, action) => {
         state.status = "failed";
+        state.error = action.error.message;
+      })
+      .addCase(createProject.pending, (state) => {
+        state.status = "preparing the project creation!";
+      })
+      .addCase(createProject.fulfilled, (state) => {
+        state.status = "project successfully created!";
+      })
+      .addCase(createProject.rejected, (state, action) => {
+        state.status = "An error occurr and the project was not created!";
+        state.error = action.error.message;
+      })
+      .addCase(updateProject.pending, (state) => {
+        state.status = "preparing to update project!";
+      })
+      .addCase(updateProject.fulfilled, (state) => {
+        state.status = "project successfully updated!";
+      })
+      .addCase(updateProject.rejected, (state, action) => {
+        state.status = "An error occurr and the project was not updated!";
         state.error = action.error.message;
       });
   },

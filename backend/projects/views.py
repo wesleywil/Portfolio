@@ -5,7 +5,7 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 
 from .models import Project, Tag
-from .serializers import ProjectSerializer, TagSerializer
+from .serializers import ProjectSerializer, ProjectNoImageSerializer, TagSerializer
 
 class ProjectView(APIView):
     permissions_classes = [permissions.IsAuthenticatedOrReadOnly,]
@@ -15,7 +15,7 @@ class ProjectView(APIView):
         return Response(serializer.data)
 
     def post(self, request, format=None):
-        serializer = ProjectSerializer(data=request.data, context={"request":request})
+        serializer = ProjectNoImageSerializer(data=request.data, context={"request":request})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status = status.HTTP_201_CREATED)

@@ -11,11 +11,16 @@ const AdminFormProject = ({ data }) => {
         type="text"
         className="text-black font-semibold px-2"
         defaultValue={data ? data.link : ""}
+        id="link"
       />
       <label>Personal</label>
-      <input type="checkbox" defaultValue={data ? data.personal : false} />
+      <input
+        type="checkbox"
+        id="personal"
+        defaultValue={data ? data.personal : false}
+      />
       <label>Tags</label>
-      <select className="text-black" multiple={true}>
+      <select id="tags" className="text-black" multiple={true}>
         {tags.map((item) => (
           <option key={item.id} value={item.id}>
             {item.title}
