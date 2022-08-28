@@ -8,6 +8,7 @@ import {
   updateProject,
   createProject,
 } from "../../redux/projects/projectsSlice";
+import { createTag, updateTag } from "../../redux/tags/tagsSlice";
 
 const AdminForm = () => {
   const dispatch = useDispatch();
@@ -17,33 +18,45 @@ const AdminForm = () => {
   const error = useSelector((state) => state.projects.error);
 
   useEffect(() => {
-    console.log("PROJECT => ", data);
+    console.log("PROJECT => ", isProject);
     console.log("ERRROR_> ", error);
   }, [dispatch, text, data, isProject]);
 
   const submitForm = (e) => {
     e.preventDefault();
-    const tagsArray = Array.from(
-      e.target.tags.selectedOptions,
-      (option) => option.value
-    );
-    const newProject = {
-      title: e.target.elements.title.value,
-      description: e.target.elements.description.value,
-      link: e.target.elements.link.value,
-      tags: tagsArray,
-      personal: e.target.elements.personal.value,
-    };
-
-    console.log("NEW PROJECT => ", newProject);
-    if (isProject) {
+    if (isProject === true) {
+      const tagsArray = Array.from(
+        e.target.tags.selectedOptions,
+        (option) => option.value
+      );
+      const projectData = {
+        title: e.target.elements.title.value,
+        description: e.target.elements.description.value,
+        link: e.target.elements.link.value,
+        tags: tagsArray,
+        personal: e.target.elements.personal.value,
+      };
+      const infoProject = {
+        data: data,
+        newProject: projectData,
+      };
       {
         data
-          ? dispatch(updateProject(data))
-          : dispatch(createProject(newProject));
+          ? dispatch(updateProject(infoProject))
+          : dispatch(createProject(infoProject));
       }
     } else {
-      console.log("Nothing Yet!");
+      const tagData = {
+        title: e.target.elements.title.value,
+        description: e.target.elements.description.value,
+      };
+      const infoTag = {
+        data: data,
+        newTag: tagData,
+      };
+      {
+        data ? dispatch(updateTag(infoTag)) : dispatch(createTag(infoTag));
+      }
     }
   };
 

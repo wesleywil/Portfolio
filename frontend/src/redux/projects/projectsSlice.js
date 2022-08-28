@@ -22,7 +22,7 @@ export const createProject = createAsyncThunk(
     console.log("DATA IS ", data);
     const res = await axios.post(
       `http://localhost:8000/api/projects/projects/`,
-      data,
+      data.newProject,
       {
         headers: { Authorization: `token ${localStorage.getItem("token")}` },
       }
@@ -36,8 +36,8 @@ export const updateProject = createAsyncThunk(
   "projects/updateProject",
   async (data) => {
     const res = await axios.put(
-      `http://localhost:8000/api/projects/projects/${data.id}/`,
-      data,
+      `http://localhost:8000/api/projects/projects/${data.data.id}/`,
+      data.newProject,
       {
         headers: { Authorization: `token ${localStorage.getItem("token")}` },
       }

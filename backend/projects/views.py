@@ -5,7 +5,7 @@ from rest_framework import status, permissions
 from rest_framework.response import Response
 
 from .models import Project, Tag
-from .serializers import ProjectSerializer, ProjectNoImageSerializer, TagSerializer
+from .serializers import ProjectSerializer, ProjectNoImageSerializer, ProjectSerializer2, TagSerializer
 
 class ProjectView(APIView):
     permissions_classes = [permissions.IsAuthenticatedOrReadOnly,]
@@ -35,7 +35,7 @@ class ProjectDetailsView(APIView):
         return Response(serializer.data)
     def put(self, request, pk, format=None):
         project = self.get_object(pk)
-        serializer = ProjectSerializer(project, data=request.data)
+        serializer = ProjectSerializer2(project, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data)

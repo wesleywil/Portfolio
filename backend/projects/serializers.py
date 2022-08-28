@@ -18,3 +18,9 @@ class ProjectNoImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
         fields = ('id', 'title', 'description', 'link', 'tags', 'personal')
+
+class ProjectSerializer2(serializers.ModelSerializer):
+    tags = TagSerializer(read_only=True, many=True)
+    class Meta:
+        model = Project
+        fields = ('id', 'title', 'description', 'link', 'tags', 'personal')
