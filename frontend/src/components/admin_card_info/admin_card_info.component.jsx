@@ -11,7 +11,7 @@ const AdminCardInfo = ({ items, text }) => {
 
   useEffect(() => {
     console.log("ITEMS", items);
-  }, [items, dispatch]);
+  }, [items, text, dispatch]);
   return (
     <div className="m-2 overflow-hidden border-2 border-slate-200 rounded-xl xl:w-1/3">
       <div className="flex flex-col ">

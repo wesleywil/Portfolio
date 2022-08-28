@@ -10,6 +10,7 @@ import { getToken } from "../../redux/account/accountSlice";
 import { allProjects } from "../../redux/projects/projectsSlice";
 import { allTags } from "../../redux/tags/tagsSlice";
 import { create } from "../../redux/adminForm/adminFormSlice";
+import { useEffect } from "react";
 
 const Admin = () => {
   const history = useNavigate();
@@ -18,6 +19,8 @@ const Admin = () => {
   const hidden = useSelector((state) => state.adminForm.hidden);
   const projects = useSelector(allProjects);
   const tags = useSelector(allTags);
+
+  useEffect(() => {}, [token, dispatch, projects, tags]);
 
   return (
     <div className="text-center xl:pt-52 pt-10 mx-auto bg-black/50 h-screen">

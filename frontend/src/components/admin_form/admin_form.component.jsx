@@ -9,6 +9,11 @@ import {
   createProject,
 } from "../../redux/projects/projectsSlice";
 import { createTag, updateTag } from "../../redux/tags/tagsSlice";
+import {
+  created,
+  updated,
+  done,
+} from "../../redux/messageStatus/messageStatusSlice";
 
 const AdminForm = () => {
   const dispatch = useDispatch();
@@ -57,6 +62,17 @@ const AdminForm = () => {
       {
         data ? dispatch(updateTag(infoTag)) : dispatch(createTag(infoTag));
       }
+    }
+    if (data) {
+      dispatch(updated());
+      setTimeout(() => {
+        dispatch(done());
+      }, 3000);
+    } else {
+      dispatch(created());
+      setTimeout(() => {
+        dispatch(done());
+      }, 3000);
     }
   };
 
