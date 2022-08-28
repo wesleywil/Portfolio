@@ -32,7 +32,7 @@ const AdminCardInfo = ({ items, text }) => {
           </div>
         </div>
 
-        <div className="flex flex-col border-t-2">
+        <div className="flex flex-col border-t-2 h-96 overflow-y-auto">
           <ul className="list-none">
             {items ? (
               items.length ? (
