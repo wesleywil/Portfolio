@@ -4,15 +4,19 @@ import { FaRegEdit, FaTrashAlt } from "react-icons/fa";
 import { update } from "../../redux/adminForm/adminFormSlice";
 import { useEffect } from "react";
 
-const AdminListInfo = ({ item }) => {
+const AdminListInfo = ({ item, isproject }) => {
   const dispatch = useDispatch();
+  const data = {
+    item: item,
+    isProject: isproject,
+  };
 
-  useEffect(() => {}, [dispatch, update, item]);
+  useEffect(() => {}, [dispatch, update, item, isproject]);
   return (
     <li className="flex text-white font-semibold bg-black/30 gap-2 justify-center text-2xl border-b-2 px-2 py-4">
       {item.title}{" "}
       <button
-        onClick={() => dispatch(update(item))}
+        onClick={() => dispatch(update(data))}
         className="pt-1 text-yellow-200 hover:text-yellow-400 transition duration-700 ease-in-out"
       >
         <FaRegEdit />

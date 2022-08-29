@@ -22,11 +22,6 @@ const AdminForm = () => {
   const isProject = useSelector((state) => state.adminForm.isproject);
   const error = useSelector((state) => state.projects.error);
 
-  useEffect(() => {
-    console.log("PROJECT => ", isProject);
-    console.log("ERRROR_> ", error);
-  }, [dispatch, text, data, isProject]);
-
   const submitForm = (e) => {
     e.preventDefault();
     if (isProject === true) {
@@ -39,7 +34,7 @@ const AdminForm = () => {
         description: e.target.elements.description.value,
         link: e.target.elements.link.value,
         tags: tagsArray,
-        personal: e.target.elements.personal.value,
+        personal: e.target.elements.personal.checked,
       };
       const infoProject = {
         data: data,
@@ -75,6 +70,8 @@ const AdminForm = () => {
       }, 3000);
     }
   };
+
+  useEffect(() => {}, [dispatch, text, data, isProject, submitForm]);
 
   return (
     <div>

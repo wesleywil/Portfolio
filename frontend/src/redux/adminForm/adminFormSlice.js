@@ -23,7 +23,8 @@ export const adminFormSlice = createSlice({
       state.isproject = action.payload;
     },
     update: (state, action) => {
-      state.data = action.payload;
+      state.data = action.payload.item;
+      state.isproject = action.payload.isProject;
       state.title = "Update";
       state.hidden = false;
     },
